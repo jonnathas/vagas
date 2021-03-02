@@ -12,5 +12,5 @@ Meu objetivo ao criar esse pacote é expandir meus conhecimentos e evoluir na cr
 2. Um usuário pode cadastrar seu curriculo.
 3. Uma empresa pode cadastrar um vaga.
 4. Um usuário pode se candidatar a uma vaga.
-5. As empresas poder ver os cadidatos às suas vagas.
+5. As empresas podem ver os cadidatos às suas vagas.
 
