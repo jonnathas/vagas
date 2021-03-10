@@ -30,16 +30,16 @@ class ServiceProvider extends LaravelServiceProvider
         
 
     private $routesPath = 'routes';
-    private $app_name = 'laravel-acl-api';
+    private $app_name = 'vagas';
     private $configPath = 'config';
     private $controllersPath = 'Http/Controllers';
     private $migrationsPath = 'database/migrations';
     private $viewPath = 'resources/views';
     private $providers =
         [   
-            //'Jonnathas\Acl\Providers\AuthorizationServiceProvider',
-            'Jonnathas\Vagas\Providers\CommandsServiceProvider'
-            //'Jonnathas\Acl\Providers\RoutesServiceProvider'
+            //'Jonnathas\Vagas\Providers\AuthorizationServiceProvider',
+            //'Jonnathas\Vagas\Providers\CommandsServiceProvider'
+            //'Jonnathas\Vagas\Providers\RoutesServiceProvider'
         ];
 
     public function boot(){

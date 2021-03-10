@@ -16,6 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/vagas',function(){
-    return "Vagas";
-});
+Route::get('/vacancy','Jonnathas\Vagas\Http\Controllers\Controller@index');
