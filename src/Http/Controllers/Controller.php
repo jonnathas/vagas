@@ -14,4 +14,5 @@ class Controller extends BaseController
 		return view('vagas::candidate.vacancy');
 
     }
+    
 }

@@ -18,6 +18,7 @@ class CreateCompaniesTable extends Migration
             $table->unsignedBigInteger('FK_user');
             $table->string('cnpj');
             $table->string('name');
+            $table->timestamps();
         
             $table->foreign('FK_user')->references('id')->on('users');
         });
@@ -30,7 +31,7 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('companies', function (Blueprint $table) {
             $table->dropForeign('companies_fk_user_foreign');
         });
 

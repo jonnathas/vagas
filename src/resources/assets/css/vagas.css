@@ -1,0 +1,22 @@
+.top-menu{
+    position: fixed;
+    top:0px;
+    height: 60px;
+    width: 100%;
+    color: white;
+}
+.top-menu nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+.top-menu nav ul li {
+    padding: 16px 10px;
+    display: inline-block;
+}
+.top-menu nav ul{
+    margin-right: 20px;
+    float: right;
+}
+.after-menu{
+    margin-top: 180px;
+}

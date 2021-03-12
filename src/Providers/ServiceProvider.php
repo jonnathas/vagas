@@ -35,6 +35,7 @@ class ServiceProvider extends LaravelServiceProvider
     private $controllersPath = 'Http/Controllers';
     private $migrationsPath = 'database/migrations';
     private $viewPath = 'resources/views';
+    private $assetsPath = 'resources/assets';
     private $providers =
         [   
             //'Jonnathas\Vagas\Providers\AuthorizationServiceProvider',
