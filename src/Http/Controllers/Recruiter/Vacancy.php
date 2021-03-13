@@ -18,7 +18,7 @@ class Vacancy extends BaseController
         $validation = $request->validate([
             'role' => ['min:3',"max:255",'required'],
             'description' => ['min:20',"max:2000",'required'],
-            'wage' => ["max:255",'required', 'numeric'],
+            'wage' => ['required', 'numeric'],
             'journey' => ["max:255",'required'],
             'contract' => ["max:255",'required']
         ]);

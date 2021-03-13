@@ -4,6 +4,7 @@
     height: 60px;
     width: 100%;
     color: white;
+    z-index:2000;
 }
 .top-menu nav ul li a{
     color: white;
@@ -18,5 +19,5 @@
     float: right;
 }
 .after-menu{
-    margin-top: 180px;
+    margin-top: 80px;
 }

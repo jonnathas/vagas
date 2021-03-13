@@ -38,7 +38,7 @@ class ServiceProvider extends LaravelServiceProvider
     private $assetsPath = 'resources/assets';
     private $providers =
         [   
-            //'Jonnathas\Vagas\Providers\AuthorizationServiceProvider',
+            'Jonnathas\Vagas\Providers\PaginatorServiceProvider',
             //'Jonnathas\Vagas\Providers\CommandsServiceProvider'
             //'Jonnathas\Vagas\Providers\RoutesServiceProvider'
         ];
