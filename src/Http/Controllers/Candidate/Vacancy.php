@@ -34,7 +34,6 @@ class Vacancy extends BaseController
             [
                 'vacancies'=> $model,
                 'search' => $search , 
-                'states' => $states
-            ]);
+                ]);
     }
 }
