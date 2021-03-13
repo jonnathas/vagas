@@ -24,6 +24,7 @@ class CreateVacanciesTable extends Migration
             $table->integer('wage');
             $table->timestamps();
             
+            $table->foreign('FK_address')->references('id')->on('adresses');
 
             $table->foreign('FK_user')->references('id')->on('users');
         });
@@ -36,9 +37,6 @@ class CreateVacanciesTable extends Migration
      */
     public function down()
     {
-        Schema::table('vacancies', function (Blueprint $table) {
-            $table->dropForeign('vacancies_fk_user_foreign');
-        });
         
         /*
         Schema::table('adresses', function (Blueprint $table) {
