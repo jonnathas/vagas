@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Jonnathas\\Vagas\\": "packages/vagas/src"
+            "Jonnathas\\Vagas\\": "/src"
         },
         "classmap": [
             "packages/vagas/src"
