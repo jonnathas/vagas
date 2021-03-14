@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jonnathas\\Vagas\\ServiceProvider"
+                "Jonnathas\\Vagas\\Providers\\ServiceProvider"
             ]
         }
     }
