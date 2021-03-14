@@ -1,0 +1,22 @@
+{
+    "name": "jonnathas/vagas",
+    "description": "um sistema de destribui\u0000\u0000o de vagas",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonnathas Luiz",
+            "email": "jonnathas_jl@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Jonnathas\\Vagas\\": "packages/vagas/src"
+        },
+        "classmap": [
+            "packages/vagas/src"
+        ]
+    }
+}
