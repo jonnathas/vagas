@@ -18,5 +18,12 @@
         "classmap": [
             "/src"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jonnathas\\Vagas\\ServiceProvider"
+            ]
+        }
     }
 }
