@@ -1,7 +1,7 @@
 @extends('vagas::layout.app')
 
 @section('content')
-<div>
+<div class="container">
     <div> 
         <form action="{{url('vacancy')}}" method="get" class="form-row ">
 

@@ -15,7 +15,7 @@ class Vacancy extends BaseController
     public function index(Request $request){
 
         $vacancies = Model::where('FK_user',auth()->user()->id)
-            ->orderByDesc('create_at')
+            ->orderByDesc('created_at')
             ->paginate(20);
 
         $search = $request->except(['_token','page']);
@@ -74,6 +74,9 @@ class Vacancy extends BaseController
         $vacancy = Model::create($vacancy);
 
         $vacancy->address()->associate($address->id);   
+
+        $vacancy->save();   
+        
 
         $state = State::get();
 
