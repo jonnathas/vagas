@@ -11,12 +11,26 @@ use Jonnathas\Vagas\Models\State;
 
 class Vacancy extends BaseController
 {
-    
+
+    public function index(Request $request){
+
+        $vacancies = Model::where('FK_user',auth()->user()->id)
+            ->orderByDesc('create_at')
+            ->paginate(20);
+
+        $search = $request->except(['_token','page']);
+
+        return view('vagas::recruiter.vacancy.index',[
+            'vacancies' => $vacancies,
+            'search' => $search
+        ]);
+    }
+
     public function create(){
 
         $state = State::get();
 
-        return view('vagas::recruiter.vacancy.create',['states' => $state ]);
+        return view('vagas::recruiter.vacancy.create',['states' => $state ,]);
     }
     public function store(Request $request){
 
