@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware'=>'web'],function(){
 
     Route::get('/vacancy','Jonnathas\Vagas\Http\Controllers\Candidate\Vacancy@index');
+    Route::get('/vacancy/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\Vacancy@show');
+    Route::post('/vacancy/{id}/candidancy','Jonnathas\Vagas\Http\Controllers\Candidate\Candidancy@store');
     
     Route::group(['middleware'=>'auth'],function(){
         
