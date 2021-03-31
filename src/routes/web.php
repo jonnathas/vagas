@@ -11,8 +11,10 @@ Route::group(['middleware'=>'web'],function(){
     
     Route::group(['middleware'=>'auth'],function(){
         
-        Route::get('/recruiter/vacancy','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@index');
-        Route::post('/recruiter/vacancy','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@store');
         Route::get('/recruiter/vacancy/create','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@create');
+        Route::get('/recruiter/vacancy/','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@index');
+        Route::get('/recruiter/vacancy/{id}','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@show');
+        Route::post('/recruiter/vacancy','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@store');
+        
     });
 });
