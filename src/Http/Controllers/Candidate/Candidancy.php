@@ -24,8 +24,9 @@ class Candidancy extends BaseController
                 'FK_user' => auth()->user()->id,
                 'FK_vacancy' => $id
             ]);
+            return redirect('vacancy/'.$id);
         }
         
-        return redirect('vacancy/'.$id);
+        
     }
 }

@@ -16,18 +16,28 @@
         <p>{{$vacancy->contract}}</p>
     </div>
     <div>  
-        <table>
-            <tr>
-                <th>Nome</th><th>E-mail</th><th></th>
-            </tr>
-            @foreach ($candidates as $candidate)
+        <h4>Candidatos:</h4>
+        <table class="table table-striped" >
+            <thead>
                 <tr>
-                    <td>$candidate->name</td>
-                    <td>$candidate->email</td>
-                    <td></td>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col"></th>
                 </tr>
-            @endforeach
+            </thead>
+            <tbody>
+                @foreach ($candidates as $candidate)
+                    <tr>
+                        <td>{{$candidate->name}}</td>
+                        <td>{{$candidate->email}}</td>
+                        <td><a href="#">visualizar</a></td>
+                    </tr>        
+                @endforeach
+            </tbody>
         </table>
+        <div>
+            {{$candidates->links()}}
+        </div>
     </div>
 </div> 
 @endsection

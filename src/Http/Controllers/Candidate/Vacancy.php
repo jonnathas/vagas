@@ -26,10 +26,10 @@ class Vacancy extends BaseController
         if($request->input('FK_state')){            
             $model = $model->where('states.id',$request->input('FK_state'));
         }
-
+        /*
         $model->join('adresses','vacancies.FK_address','adresses.id');
         $model->join('states','adresses.FK_state','states.id');
-        
+        */
 
         $model = $model->orderByDesc('vacancies.created_at');
 

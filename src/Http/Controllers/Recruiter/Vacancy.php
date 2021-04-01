@@ -90,10 +90,8 @@ class Vacancy extends BaseController
     public function show($id, Request $request){
         $vacancy = Model::find($id);
 
-        $candidates = $vacancy->candidates()->get();
-
-
-        dd($candidates);
+        $candidates = $vacancy->candidates()->paginate(20);
+    
         //DB::enableQueryLog();
 
         //dd(DB::getQueryLog());
