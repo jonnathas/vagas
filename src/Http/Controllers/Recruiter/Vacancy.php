@@ -9,7 +9,19 @@ use Jonnathas\Vagas\Models\Vacancy as Model;
 
 class Vacancy extends BaseController
 {
-    
+    public function index(Request $request){
+
+        $vacancies = Model::where('FK_user',auth()->user()->id)
+            ->orderByDesc('created_at')
+            ->paginate(20);
+
+        $search = $request->except(['_token','page']);
+
+        return view('vagas::recruiter.vacancy.index',[
+            'vacancies' => $vacancies,
+            'search' => $search
+        ]);
+    }
     public function create(){
         return view('vagas::recruiter.vacancy.create');
     }
@@ -22,6 +34,38 @@ class Vacancy extends BaseController
             'journey' => ["max:255",'required'],
             'contract' => ["max:255",'required']
         ]);
+        
+        $vacancy = [
+            'role' => $request->input('role'),
+            'description' => $request->input('description'),
+            'wage' => $request->input('wage'),
+            'journey' => $request->input('journey'),
+            'contract' => $request->input('contract'),
+        ];
+
+        $address = [
+            'FK_state' => $request->input('FK_state'),
+            'place' => $request->input('place'),
+            'complement' => $request->input('complement'),
+            'number' => $request->input('number')
+        ];
+
+        if(auth()->check()){
+            $vacancy['FK_user'] = auth()->user()->id;
+            $address['FK_user'] = auth()->user()->id;
+        }
+
+
+        $address = Address::create($address);
+
+        $vacancy = Model::create($vacancy);
+
+        $vacancy->address()->associate($address->id);   
+
+        $vacancy->save();   
+        
+
+        $state = State::get();
 
         Model::create($request->except('_token'));
         return view('vagas::recruiter.vacancy.create');
