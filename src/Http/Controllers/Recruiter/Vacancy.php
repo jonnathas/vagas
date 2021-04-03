@@ -6,12 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 use Jonnathas\Vagas\Models\Vacancy as Model;
-use Jonnathas\Vagas\Models\Address;
-use Jonnathas\Vagas\Models\State;
 
 class Vacancy extends BaseController
 {
-
     public function index(Request $request){
 
         $vacancies = Model::where('FK_user',auth()->user()->id)
@@ -25,27 +22,17 @@ class Vacancy extends BaseController
             'search' => $search
         ]);
     }
-
     public function create(){
-
-        $state = State::get();
-
-        return view('vagas::recruiter.vacancy.create',['states' => $state ,]);
+        return view('vagas::recruiter.vacancy.create');
     }
     public function store(Request $request){
 
-        $valided = $request->validate([
+        $validation = $request->validate([
             'role' => ['min:3',"max:255",'required'],
             'description' => ['min:20',"max:2000",'required'],
             'wage' => ['required', 'numeric'],
             'journey' => ["max:255",'required'],
-            'contract' => ["max:255",'required'],
-
-            'FK_state' =>  ["max:255",'required'],
-
-            'place' =>  ["max:255",'required'],
-            'complement' =>  ["max:255",'required'],
-            'number' => ["required"]
+            'contract' => ["max:255",'required']
         ]);
         
         $vacancy = [
@@ -80,9 +67,7 @@ class Vacancy extends BaseController
 
         $state = State::get();
 
-        return view('vagas::recruiter.vacancy.create',[
-            'states' => $state,
-            'success' =>'Cadastrado com sucesso.'
-        ]); 
+        Model::create($request->except('_token'));
+        return view('vagas::recruiter.vacancy.create');
     }
 }

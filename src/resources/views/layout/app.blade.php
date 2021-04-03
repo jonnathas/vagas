@@ -17,7 +17,6 @@
 
     <div class="after-menu">
 
-        @include('vagas::layout.success')
         @include('vagas::layout.errors')
 
         @yield('content')
