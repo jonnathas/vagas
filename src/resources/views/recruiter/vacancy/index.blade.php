@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div> 
-        <form action="{{url('vacancy')}}" method="get" class="form-row ">
+        <form action="{{url('recruiter/vacancy')}}" method="get" class="form-row ">
 
             <input class="form-control col-md-4 mr-2" type="text" name="role" placeholder="Cargo" value="{{$search['role'] ?? ''}}"/>
 

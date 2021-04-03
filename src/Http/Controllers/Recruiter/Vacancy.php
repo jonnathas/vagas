@@ -22,7 +22,7 @@ class Vacancy extends BaseController
 
         return view('vagas::recruiter.vacancy.index',[
             'vacancies' => $vacancies,
-            'search' => $search,
+            'search' => $search
         ]);
     }
     public function create(){
@@ -77,11 +77,13 @@ class Vacancy extends BaseController
 
         $vacancy->save();   
         
-
-        $state = State::get();
-
         Model::create($request->except('_token'));
-        return view('vagas::recruiter.vacancy.create');
+        
+        $states = State::get();
+
+        return view('vagas::recruiter.vacancy.create',[
+            'states' => $states
+        ]);    
     }
 
     public function show($id, Request $request){
