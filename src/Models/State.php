@@ -4,7 +4,7 @@ namespace Jonnathas\Vagas\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class States extends Model
+class State extends Model
 {
     protected $fillable = [
         'name','abbreviation','id'
