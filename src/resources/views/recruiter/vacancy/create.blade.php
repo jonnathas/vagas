@@ -29,34 +29,6 @@
                     <label for="contrato">Contrato</label>
                     <input class="form-control col-md" type="text" name="contract" id="contrato" />
                 </div>
-                
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <select class="form-control col-md" name="FK_state" id="estado">
-                        <option>selecione o estado</option>
-
-                        @foreach ($states as $state)
-                            <option value="{{$state->id}}">{{$state->abbreviation}}</option>
-                        @endforeach
-
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="endereco">Endereço</label>
-                    <input class="form-control col-md" type="text" name="place" id="endereco" />
-                </div>
-                
-                <div class="form-group">
-                    <label for="complemento">Complemento</label>
-                    <input class="form-control col-md" type="text" name="complement" id="complemento" />
-                </div>
-                
-                <div class="form-group">
-                    <label for="numero">Número</label>
-                    <input class="form-control col-md" type="text" name="number" id="numero" />
-                </div>
-
                 <div class="form-group">
                     <input class="form-control col-md btn btn-primary" type="submit" value="Publicar"/>
                 </div>
