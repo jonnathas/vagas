@@ -30,6 +30,15 @@
                     <input class="form-control col-md" type="text" name="contract" id="contrato" />
                 </div>
                 <div class="form-group">
+                    <select name="FK_state" class="form-control col-md">
+                        <option>Selecione um estado</option>
+                        
+                        @foreach ($states as $state)
+                            <option value="{{$state->id}}">{{$state->abbreviation}}</option>   
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <input class="form-control col-md btn btn-primary" type="submit" value="Publicar"/>
                 </div>
             </form>

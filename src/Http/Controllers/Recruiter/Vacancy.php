@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 use Jonnathas\Vagas\Models\Vacancy as Model;
 use Jonnathas\Vagas\Models\Address;
+use Jonnathas\Vagas\Models\State;
 
 class Vacancy extends BaseController
 {
@@ -21,20 +22,30 @@ class Vacancy extends BaseController
 
         return view('vagas::recruiter.vacancy.index',[
             'vacancies' => $vacancies,
-            'search' => $search
+            'search' => $search,
         ]);
     }
     public function create(){
-        return view('vagas::recruiter.vacancy.create');
+
+        $states = State::get();
+
+        return view('vagas::recruiter.vacancy.create',[
+            'states' => $states
+        ]);
     }
     public function store(Request $request){
 
-        $validation = $request->validate([
+        $request->validate([
             'role' => ['min:3',"max:255",'required'],
             'description' => ['min:20',"max:2000",'required'],
             'wage' => ['required', 'numeric'],
             'journey' => ["max:255",'required'],
-            'contract' => ["max:255",'required']
+            'contract' => ["max:255",'required'],
+            
+            'FK_state' => ["max:255",'required'],
+            'place' => ["max:255",'required'],
+            'complement' => ["max:255",'required'],
+            'number' => ['required']
         ]);
         
         $vacancy = [
