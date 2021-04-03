@@ -15,10 +15,10 @@ class CreateCandidanciesTable extends Migration
     {
         Schema::create('candidancies', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('FK_candidate');
+            $table->unsignedBigInteger('FK_user');
             $table->unsignedBigInteger('FK_vacancy');
             
-            $table->foreign('FK_candidate')->references('id')->on('users');
+            $table->foreign('FK_user')->references('id')->on('users');
 
             $table->foreign('FK_vacancy')->references('id')->on('vacancies');
         });

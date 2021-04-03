@@ -4,6 +4,7 @@ namespace Jonnathas\Vagas\Http\Controllers\Recruiter;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\DB;
 
 use Jonnathas\Vagas\Models\Vacancy as Model;
 use Jonnathas\Vagas\Models\Address;
@@ -84,5 +85,20 @@ class Vacancy extends BaseController
             'states' => $state,
             'success' =>'Cadastrado com sucesso.'
         ]); 
+    }
+
+    public function show($id, Request $request){
+        $vacancy = Model::find($id);
+
+        $candidates = $vacancy->candidates()->paginate(20);
+    
+        //DB::enableQueryLog();
+
+        //dd(DB::getQueryLog());
+
+        return view('vagas::recruiter.vacancy.show',[
+            'vacancy' => $vacancy,
+            'candidates' => $candidates
+        ]);
     }
 }

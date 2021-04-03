@@ -37,8 +37,17 @@
                 
                 <span>Contrato:</span>
                 <p>{{$vacancy->contract}}</p>
+                
+                @auth
+                <div>
+                    <form action="vacancy/{{$vacancy->id}}/candidancy" method="post">
+                        @csrf
+                        <input type="submit" value="Candidatar-se"  class="form-control ptn btn-warning col-md-4 mr-2" />
+                    </form>
+                </div>
+                @endauth
+
             </div>
-            
 
         @endforeach
     </div> 

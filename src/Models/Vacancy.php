@@ -17,5 +17,8 @@ class Vacancy extends Model
     public function address(){
         return $this->belongsTo(address::Class,'Fk_address','id');
     }
+    public function candidates(){
+        return $this->belongsToMany('App\Models\User','candidancies','FK_vacancy','FK_user');
+    }
 
 }

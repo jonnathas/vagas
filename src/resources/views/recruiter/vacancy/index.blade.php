@@ -25,9 +25,12 @@
                 
                 <span>Contrato:</span>
                 <p>{{$vacancy->contract}}</p>
-            </div>
-            
+                
+                <form action="vacancy/{{$vacancy->id}}" method="get">
+                    <input type="submit" value="Acompanhar"  class="form-control ptn btn-warning col-md-4 mr-2">
+                </form>
 
+            </div>
         @endforeach
     </div> 
     <div> 
