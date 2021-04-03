@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 
 use Jonnathas\Vagas\Models\Vacancy as Model;
+use Jonnathas\Vagas\Models\Address;
 
 class Vacancy extends BaseController
 {
