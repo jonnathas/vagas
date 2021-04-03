@@ -6,7 +6,7 @@ trait ConfigServiceProviderTrait
 {
     private function publishConfig(){
 
-    	if(empty($configPath)){
+    	if(empty($this->configPath)){
     		return false;
     	}
     	

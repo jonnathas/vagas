@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Jonnathas\Vagas\Models\Vacancy as Model;
 use Jonnathas\Vagas\Models\State;
+use Jonnathas\Vagas\Models\Candidancy;
 
 
 class Vacancy extends BaseController
@@ -25,10 +26,13 @@ class Vacancy extends BaseController
         if($request->input('FK_state')){            
             $model = $model->where('states.id',$request->input('FK_state'));
         }
-
+        /*
         $model->join('adresses','vacancies.FK_address','adresses.id');
         $model->join('states','adresses.FK_state','states.id');
-        
+        */
+
+        $model = $model->orderByDesc('vacancies.created_at');
+
         $model = $model->paginate(20);
 
         //dd(DB::getQueryLog());
@@ -42,6 +46,29 @@ class Vacancy extends BaseController
                 'vacancies'=> $model,
                 'search' => $search, 
                 'states' => $state
+            ]);
+    }
+    public function show($id, Request $request){
+
+        $candidandy = Candidancy::where([
+            'FK_user' => auth()->user()->id,
+            'FK_vacancy' => $id
+        ])->get();
+
+        if($candidandy){
+            $is_candidate = true;
+        }else{
+            $is_candidate = false;
+        }
+        
+        $model = Model::find($id);
+        $model->join('adresses','vacancies.FK_address','adresses.id');
+        $model->join('states','adresses.FK_state','states.id');
+
+        return view('vagas::candidate.vacancy.show',
+            [
+                'vacancy'=> $model,
+                'is_candidate' => $is_candidate
             ]);
     }
 }

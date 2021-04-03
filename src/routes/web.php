@@ -6,8 +6,22 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware'=>'web'],function(){
 
     Route::get('/vacancy','Jonnathas\Vagas\Http\Controllers\Candidate\Vacancy@index');
+<<<<<<< HEAD
 
     Route::post('/recruiter/vacancy','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@store');
     Route::get('/recruiter/vacancy','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@create');
     
+=======
+    Route::get('/vacancy/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\Vacancy@show');
+    Route::post('/vacancy/{id}/candidancy','Jonnathas\Vagas\Http\Controllers\Candidate\Candidancy@store');
+    
+    Route::group(['middleware'=>'auth'],function(){
+        
+        Route::get('/recruiter/vacancy/create','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@create');
+        Route::get('/recruiter/vacancy/','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@index');
+        Route::get('/recruiter/vacancy/{id}','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@show');
+        Route::post('/recruiter/vacancy','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@store');
+        
+    });
+>>>>>>> 2eedbcdd7798c16e08368ad326b13df701d9faa4
 });
