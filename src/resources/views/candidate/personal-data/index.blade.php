@@ -5,12 +5,9 @@
 @section('content')
 
 <div class="container">
-    <form action="{{route('personal_data.store')}}" method="POST">
-        
-        <div class="form-group">
-            <label for="contrato">Contrato</label>
-            <input class="form-control col-md" type="text" name="contract" id="contrato" />
-        </div>
-    </form>
+    <div class="jumbotron">
+        <h2>{{$user->name}}</h2>
+        <p>{{$user->email}}</p>
+    </div>
 </div>    
 @endsection
