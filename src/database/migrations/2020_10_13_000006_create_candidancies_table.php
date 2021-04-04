@@ -17,6 +17,7 @@ class CreateCandidanciesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('FK_user');
             $table->unsignedBigInteger('FK_vacancy');
+            $table->timestamps();
             
             $table->foreign('FK_user')->references('id')->on('users');
 

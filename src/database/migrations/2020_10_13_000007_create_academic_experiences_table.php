@@ -25,6 +25,7 @@ class CreateAcademicExperiencesTable extends Migration
 
             $table->date('start');
             $table->date('end')->nullable();
+            $table->timestamps();
 
             $table->foreign('FK_user')->references('id')->on('users');
 
