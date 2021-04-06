@@ -21,9 +21,13 @@ class PersonalData extends BaseController
     public function index(){
 
         $user = User::find(auth()->user()->id);
+        $phone = $user->phones()->get();
+        $address = $user->adresses()->get();
 
         return view('vagas::candidate.personal-data.index',[
-            'user' => $user 
+            'user' => $user,
+            'phones' => $phone,
+            'adresses' => $address
         ]);
     }
     public function store(Request $request){
