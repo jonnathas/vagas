@@ -18,7 +18,7 @@ class CreateAcademicExperiencesTable extends Migration
             $table->unsignedBigInteger('FK_user');
             $table->string('school_name');
             
-            $table->enum('school_level',['b','md','te','u','e','mt','d','ld','a','ti','mba']);
+            $table->enum('school_level',['básico','médio','técnico','universitário','especialização','mestrado','doutorado','livre_docência','adjunto','titular','mba']);
             
             $table->string('country');
             $table->enum('status',['completo','cursando']);
@@ -45,6 +45,8 @@ class CreateAcademicExperiencesTable extends Migration
             adjunto => 'a'
             titular => 'ti'
             mba => 'mba'
+
+
 
             Referêcia:
             https://documentacao.senior.com.br/gestao-de-pessoas-hcm/6.2.34/vetorh/fr127fas.htm
