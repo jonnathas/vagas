@@ -13,9 +13,9 @@ Route::group(['middleware'=>'web'],function(){
     Route::group(['middleware'=>'auth'],function(){
         
         //Candidato
-        Route::get('/personal-data/create','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalData@create')->name('personal_data.create');
-        Route::get('/personal-data','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalData@index')->name('personal_data.index');
-        Route::post('/personal-data','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalData@store')->name('personal_data.store');
+        Route::get('/personal-data/create','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalDataController@create')->name('personal_data.create');
+        Route::get('/personal-data','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalDataController@index')->name('personal_data.index');
+        Route::post('/personal-data','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalDataController@store')->name('personal_data.store');
         
 
 

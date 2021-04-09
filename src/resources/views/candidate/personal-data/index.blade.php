@@ -28,10 +28,24 @@
         <div>
             <h4>Formação acadêmica:</h4>
             @foreach ($academic_experiences as $experience)
-                <div>
+                <div class="mt-4">
                     <h5>{{$experience->school_name}}</h5>
-                    <p>{{$experience->school_level}}</p>
+                    <p>{{$experience->course_name}}</p>
+                    <p>{{$experience->course_level}}</p>
                     <p>{{$experience->country}}</p>
+                    <p>{{$experience->status}}</p>
+                    <p>{{$experience->start}}</p>
+                    <p>{{$experience->end}}</p>
+                </div>
+            @endforeach
+        </div>
+        <div>
+            <h4>Experiências profissionais:</h4>
+            @foreach ($professional_experiences as $experience)
+                <div class="mt-4">
+                    <h5>{{$experience->company}}</h5>
+                    <p>{{$experience->description}}</p>
+                    <p>{{$experience->role}}</p>
                     <p>{{$experience->status}}</p>
                     <p>{{$experience->start}}</p>
                     <p>{{$experience->end}}</p>

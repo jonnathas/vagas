@@ -17,8 +17,9 @@ class CreateAcademicExperiencesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('FK_user');
             $table->string('school_name');
-            
-            $table->enum('school_level',['básico','médio','técnico','universitário','especialização','mestrado','doutorado','livre_docência','adjunto','titular','mba']);
+            $table->string('course_name');
+
+            $table->enum('course_level',['básico','médio','técnico','universitário','especialização','mestrado','doutorado','livre_docência','adjunto','titular','mba']);
             
             $table->string('country');
             $table->enum('status',['completo','cursando']);

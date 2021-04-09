@@ -12,5 +12,8 @@ trait UserTrait{
     public function academic_experiences(){
         return $this->hasMany(AcademicExperience::class,'FK_user','id');
     }
-
+    
+    public function professional_experiences(){
+        return $this->hasMany(ProfessionalExperience::class,'FK_user','id');
+    }
 }
