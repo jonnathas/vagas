@@ -16,7 +16,7 @@ class CreateProfessionalExperiencesTable extends Migration
         Schema::create('professional_experiences', function (Blueprint $table) {
             
             $table->id();
-            $table->unsignedBigInteger('FK_user');
+            $table->unsignedBigInteger('user_id');
             $table->string('company');
             $table->text('description');
             $table->string('role');
@@ -24,7 +24,7 @@ class CreateProfessionalExperiencesTable extends Migration
             $table->date('end')->nullable();
             $table->timestamps();
 
-            $table->foreign('FK_user')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
         });
     }

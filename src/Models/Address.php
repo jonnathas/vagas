@@ -9,7 +9,7 @@ class Address extends Model
 {
     protected $table = 'adresses';
     protected $fillable = [
-        'FK_user','FK_state','place','complement','number'
+        'user_id','state_id','place','complement','number'
     ];
 
     protected $hidden = [

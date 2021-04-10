@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select name="FK_state" id="estado" class="form-control col-md">
+                    <select name="state_id" id="estado" class="form-control col-md">
                         <option>Selecione um estado</option>
                         
                         @foreach ($states as $state)

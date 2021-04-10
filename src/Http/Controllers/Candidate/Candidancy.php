@@ -15,14 +15,14 @@ class Candidancy extends BaseController
     public function store($id, Request $request){
 
         $candidandy = Model::where([
-            'FK_user' => auth()->user()->id,
-            'FK_vacancy' => $id
+            'user_id' => auth()->user()->id,
+            'vacancy_id' => $id
         ])->get();
 
         if($candidandy){
             Model::create([
-                'FK_user' => auth()->user()->id,
-                'FK_vacancy' => $id
+                'user_id' => auth()->user()->id,
+                'vacancy_id' => $id
             ]);
             return redirect('vacancy/'.$id);
         }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vacancy extends Model
 {
     protected $fillable = [
-        'description','role','wage','journey','contract','FK_user'
+        'description','role','wage','journey','contract','user_id'
     ];
 
     protected $hidden = [
@@ -15,9 +15,9 @@ class Vacancy extends Model
     ];
 
     public function address(){
-        return $this->belongsTo(Address::Class,'Fk_address','id');
+        return $this->belongsTo(Address::Class,'address_id','id');
     }
     public function candidates(){
-        return $this->belongsToMany('App\Models\User','candidancies','FK_vacancy','FK_user');
+        return $this->belongsToMany('App\Models\User','candidancies','vacancy_id','user_id');
     }
 }

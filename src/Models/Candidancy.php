@@ -9,7 +9,7 @@ class Candidancy extends Model
     protected $table = 'candidancies';
     
     protected $fillable = [
-        'FK_user','FK_vacancy'
+        'user_id','vacancy_id'
     ];
 
     protected $hidden = [

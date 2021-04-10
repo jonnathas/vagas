@@ -15,13 +15,13 @@ class CreateCandidanciesTable extends Migration
     {
         Schema::create('candidancies', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('FK_user');
-            $table->unsignedBigInteger('FK_vacancy');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('vacancy_id');
             $table->timestamps();
             
-            $table->foreign('FK_user')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->foreign('FK_vacancy')->references('id')->on('vacancies');
+            $table->foreign('vacancy_id')->references('id')->on('vacancies');
         });
     }
 

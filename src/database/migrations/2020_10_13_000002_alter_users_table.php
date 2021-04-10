@@ -15,9 +15,9 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->date('birth_date')->nullable();
-            $table->unsignedBigInteger('FK_state')->nullable();
+            $table->unsignedBigInteger('state_id')->nullable();
         
-            $table->foreign('FK_state')->references('id')->on('states');
+            $table->foreign('state_id')->references('id')->on('states');
         });
     }
 
@@ -29,11 +29,11 @@ class AlterUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('users_FK_state_foreign');
+            $table->dropForeign('users_state_id_foreign');
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('FK_state');
+            $table->dropColumn('state_id');
             $table->dropColumn('birth_date');
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Phone extends Model
 {
     protected $fillable = [
-        'number','FK_user','id'
+        'number','user_id','id'
     ];
 
     protected $hidden = [

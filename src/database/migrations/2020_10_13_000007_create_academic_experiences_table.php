@@ -15,7 +15,7 @@ class CreateAcademicExperiencesTable extends Migration
     {
         Schema::create('academic_experiences', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('FK_user');
+            $table->unsignedBigInteger('user_id');
             $table->string('school_name');
             $table->string('course_name');
 
@@ -28,7 +28,7 @@ class CreateAcademicExperiencesTable extends Migration
             $table->date('end')->nullable();
             $table->timestamps();
 
-            $table->foreign('FK_user')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
 
         });
             /*

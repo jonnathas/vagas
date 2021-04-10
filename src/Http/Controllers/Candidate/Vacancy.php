@@ -17,19 +17,20 @@ class Vacancy extends BaseController
 
         //DB::enableQueryLog();
 
-        $model = Model::where($request->except(['_token','page','role','FK_state']));
+        $model = Model::where($request->except(['_token','page','role','state_id']));
 
         if($request->input('role')){
             $model = Model::where("role",'like',"%".$request->input('role')."%");
         }
 
-        if($request->input('FK_state')){            
-            $model = $model->where('states.id',$request->input('FK_state'));
+        $model->join('adresses','vacancies.address_id','adresses.id');
+        $model->join('states','adresses.state_id','states.id');
+
+        $model->select('states.id as fk_state','adresses.id as fk_address','role','description','wage','journey','contract','vacancies.id as id');
+        
+        if($request->input('state_id')){            
+            $model = $model->where('states.id',$request->input('state_id'));
         }
-        /*
-        $model->join('adresses','vacancies.FK_address','adresses.id');
-        $model->join('states','adresses.FK_state','states.id');
-        */
 
         $model = $model->orderByDesc('vacancies.created_at');
 
@@ -51,8 +52,8 @@ class Vacancy extends BaseController
     public function show($id, Request $request){
 
         $candidandy = Candidancy::where([
-            'FK_user' => auth()->user()->id,
-            'FK_vacancy' => $id
+            'user_id' => auth()->user()->id,
+            'vacancy_id' => $id
         ])->get();
 
         if($candidandy){
@@ -62,8 +63,8 @@ class Vacancy extends BaseController
         }
         
         $model = Model::find($id);
-        $model->join('adresses','vacancies.FK_address','adresses.id');
-        $model->join('states','adresses.FK_state','states.id');
+        $model->join('adresses','vacancies.address_id','adresses.id');
+        $model->join('states','adresses.state_id','states.id');
 
         return view('vagas::candidate.vacancy.show',
             [

@@ -15,12 +15,12 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('FK_user');
+            $table->unsignedBigInteger('user_id');
             $table->string('cnpj');
             $table->string('name');
             $table->timestamps();
         
-            $table->foreign('FK_user')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -32,7 +32,7 @@ class CreateCompaniesTable extends Migration
     public function down()
     {
         Schema::table('companies', function (Blueprint $table) {
-            $table->dropForeign('companies_fk_user_foreign');
+            $table->dropForeign('companies_user_id_foreign');
         });
 
         Schema::dropIfExists('companies');

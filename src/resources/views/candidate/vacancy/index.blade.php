@@ -11,7 +11,7 @@
 
             <input class="form-control col-md-4 mr-2" type="text" name="role" placeholder="Cargo" value="{{$search['role'] ?? ''}}"/>
 
-            <select name="FK_state" class="form-control col-md-4 mr-2">
+            <select name="state_id" class="form-control col-md-4 mr-2">
                 <option value="0">Selecione um estado</option>
                 @foreach ($states as $state)
                     <option value="{{$state->id}}">{{$state->abbreviation}}</option>
@@ -25,6 +25,7 @@
     </div>
     <div>
         @foreach ($vacancies as $vacancy)
+
             <div class="jumbotron">
                 <h4>{{$vacancy->role}}</h4>
                 <p>{{$vacancy->description}}</p>

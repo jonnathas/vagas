@@ -15,8 +15,8 @@ class CreateVacanciesTable extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('FK_user')->nullable();
-            $table->unsignedBigInteger('FK_address')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('address_id')->nullable();
             $table->string('role');
             $table->text('description');
             $table->string('journey');
@@ -24,9 +24,9 @@ class CreateVacanciesTable extends Migration
             $table->integer('wage');
             $table->timestamps();
             
-            $table->foreign('FK_address')->references('id')->on('adresses');
+            $table->foreign('address_id')->references('id')->on('adresses');
 
-            $table->foreign('FK_user')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

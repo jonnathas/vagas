@@ -14,7 +14,7 @@ class Vacancy extends BaseController
 {
     public function index(Request $request){
 
-        $vacancies = Model::where('FK_user',auth()->user()->id)
+        $vacancies = Model::where('user_id',auth()->user()->id)
             ->orderByDesc('created_at')
             ->paginate(20);
 
@@ -42,7 +42,7 @@ class Vacancy extends BaseController
             'journey' => ["max:255",'required'],
             'contract' => ["max:255",'required'],
             
-            'FK_state' => ["max:255",'required'],
+            'state_id' => ["max:255",'required'],
             'place' => ["max:255",'required'],
             'complement' => ["max:255",'required'],
             'number' => ['required']
@@ -57,15 +57,15 @@ class Vacancy extends BaseController
         ];
 
         $address = [
-            'FK_state' => $request->input('FK_state'),
+            'state_id' => $request->input('state_id'),
             'place' => $request->input('place'),
             'complement' => $request->input('complement'),
             'number' => $request->input('number')
         ];
 
         if(auth()->check()){
-            $vacancy['FK_user'] = auth()->user()->id;
-            $address['FK_user'] = auth()->user()->id;
+            $vacancy['user_id'] = auth()->user()->id;
+            $address['user_id'] = auth()->user()->id;
         }
 
 
