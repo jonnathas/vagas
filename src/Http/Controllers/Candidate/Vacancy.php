@@ -15,6 +15,7 @@ class Vacancy extends BaseController
    
     public function index(Request $request){
 
+        
         //DB::enableQueryLog();
 
         $model = Model::where($request->except(['_token','page','role','state_id']));
@@ -26,7 +27,16 @@ class Vacancy extends BaseController
         $model->join('adresses','vacancies.address_id','adresses.id');
         $model->join('states','adresses.state_id','states.id');
 
-        $model->select('states.id as fk_state','adresses.id as fk_address','role','description','wage','journey','contract','vacancies.id as id');
+        $model->select(
+            'states.id as fk_state',
+            'adresses.id as fk_address',
+            'vacancies.id as id',
+            'role',
+            'description',
+            'wage',
+            'journey',
+            'contract'
+            );
         
         if($request->input('state_id')){            
             $model = $model->where('states.id',$request->input('state_id'));

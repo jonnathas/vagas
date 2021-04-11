@@ -11,31 +11,24 @@ use Jonnathas\Vagas\Models\Candidancy as Model;
 
 
 class PersonalDataController extends BaseController
-{
-   
-    public function create(Request $request){
-
-        return view('vagas::candidate.personal-data.create');
-    }
-    
-    public function index(){
-
-        $user = User::find(auth()->user()->id);
-        $phone = $user->phones()->get();
-        $address = $user->adresses()->get();
-        $academic_e = $user->academic_experiences()->get();
-        $professional_e = $user->professional_experiences()->get();
+{   
+    public function edit($id, Request $request){
         
 
-        return view('vagas::candidate.personal-data.index',[
-            'user' => $user,
-            'phones' => $phone,
-            'adresses' => $address,
-            'academic_experiences' => $academic_e,
-            'professional_experiences' => $professional_e
-        ]);
+        return view('vagas::candidate.personal-data.edit',[
+            
+            'user'=> User::find($id)
+        ]);   
     }
-    public function store(Request $request){
 
+    public function update($id, Request $request){
+        
+        $user = User::find($id);
+        $user->update($request->except(['_token']));
+
+        return view('vagas::candidate.personal-data.edit',[
+            
+            'user'=> $user
+        ]);
     }
 }

@@ -4,7 +4,7 @@
             <li><a href="{{ url('/vacancy') }}">Buscar vagas</a></li>
 
             @auth
-                <li><a href="{{ route('personal_data.index') }}">Curriculo</a></li>
+                <li><a href="{{ route('curriculum.index') }}">Curriculo</a></li>
                 <li><a href="{{ url('/recruiter/vacancy/create') }}">Publicar vaga</a></li> 
                 <li><a href="{{ url('/recruiter/vacancy') }}">Ver minhas publicações</a></li>
                 <li>

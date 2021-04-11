@@ -16,7 +16,7 @@
             "Jonnathas\\Vagas\\": "/src"
         },
         "classmap": [
-            "/src"
+            "src"
         ]
     },
     "extra": {

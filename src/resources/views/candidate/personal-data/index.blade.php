@@ -9,7 +9,7 @@
         <div>
             <h2>{{$user->name}}</h2>
             <div >
-                <form action="#">
+                <form action="{{url('personal-data/'.$user->id.'/edit')}}">
                     <input type="submit" value="Editar nome"  class="form-control ptn btn-warning col-md-4 mb-5" >
                 </form>
             </div>
