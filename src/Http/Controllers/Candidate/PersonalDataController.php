@@ -24,11 +24,12 @@ class PersonalDataController extends BaseController
     public function update($id, Request $request){
         
         $user = User::find($id);
-        $user->update($request->except(['_token']));
+        // update($request->except(['_token'])$user->);
+        $user->birth_date = $request->birth_date;
+        $user->name = $request->name;
 
-        return view('vagas::candidate.personal-data.edit',[
-            
-            'user'=> $user
-        ]);
+        $user->save();
+
+        return redirect()->back()->with('success','Atualizado com sucesso!');
     }
 }

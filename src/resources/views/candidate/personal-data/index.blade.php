@@ -7,22 +7,32 @@
 <div class="container mt-5">
     <div>
         <div>
-            <h2>{{$user->name}}</h2>
-            <div >
-                <form action="{{url('personal-data/'.$user->id.'/edit')}}">
-                    <input type="submit" value="Editar nome"  class="form-control ptn btn-warning col-md-4 mb-5" >
-                </form>
+            <h2>{{$user->name}} 
+                <a href="{{url('personal-data/'.$user->id.'/edit')}}"><i class="far fa-edit"></i></a>
+            </h2>
+            <p class="ml-4"><strong>Data de nascimento: </strong>{{$user->birth_date}}</p>
+            
+                    
+
             </div>
             <p class="ml-4"><strong>E-mail: </strong>{{$user->email}}</p>
-            <p class="ml-4"><strong>Telefone: </strong>
+            <div class="ml-4"><strong>Telefone: </strong>
                 @foreach ($phones as $phone)
-                {{$phone->number}}    
+                    
+                    <span class="mr-3">{{$phone->number}}
+                    <a href="{{url('phone/'.$phone->id.'/edit')}}"><i class="far fa-edit"></i></a>
+                    </span>
+
                 @endforeach
-            </p>
+                
+                <a href="{{url('phone/create')}}">
+                    <i class="fas fa-plus"></i>
+                </a>
+
+            </div>
+
             <div >
-                <form action="#">
-                    <input type="submit" value="Editar telefones"  class="form-control ptn btn-warning col-md-4 mb-5" >
-                </form>
+                
             </div>
         </div>
         <div class="mt-5">
