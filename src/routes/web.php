@@ -12,7 +12,7 @@ Route::group(['middleware'=>'web'],function(){
     
     Route::group(['middleware'=>'auth'],function(){
         
-        //Candidato
+        //Curriculo
         Route::get('/curriculum','Jonnathas\Vagas\Http\Controllers\Candidate\CurriculumController@index')->name('curriculum.index');
         
         Route::get('/personal-data/{id}/edit','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalDataController@edit')->name('personal_data.edit');
@@ -28,7 +28,9 @@ Route::group(['middleware'=>'web'],function(){
         //endereços
         Route::get('/address/create','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@create');
         Route::post('/address','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@store');
-
+        Route::get('/address/{id}/edit','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@edit');
+        Route::put('/address/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@update');
+        Route::delete('/address/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@delete');
 
         //Recrutador
         Route::get('/recruiter/vacancy/create','Jonnathas\Vagas\Http\Controllers\Recruiter\Vacancy@create');

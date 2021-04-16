@@ -19,6 +19,30 @@ class AddressController extends BaseController
             'states' => $states 
         ]); 
     }
+    public function edit($id){
+
+        $address = Address::find($id);
+
+        $states = State::get();
+
+        return view('vagas::candidate.address.create',[
+            'states' => $states,
+            'address' => $address
+        ]); 
+    }
+    public function update($id, Request $request){
+        
+        $data = $request->except(['_token','user_id']);
+
+        $address = Address::find($id);
+
+        if($address->update($data)){
+            return redirect()->back()->with('success', 'Sucesso ao salvar!');
+        }
+
+        return redirect()->back()->with('error','Falha ao salvar');
+    }
+
     public function store(Request $request){
 
         $request->validate([
@@ -34,5 +58,18 @@ class AddressController extends BaseController
         if(Address::create($data)){
             return redirect()->back()->with('success', 'Endereço salvo com sucesso!');
         }
+        return redirect()->back()->with('error','Falha ao salvar!');
+
+    }
+    public function delete($id){
+        
+        $address = Address::find($id);
+        
+        if($address->delete()){
+            return redirect()->back()->with('success', 'Endereço deletado com sucesso!');
+
+        }
+        return redirect()->back()->with('error', 'Erro ao deletar!');
+         
     }
 }

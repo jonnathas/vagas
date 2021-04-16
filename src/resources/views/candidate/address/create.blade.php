@@ -45,9 +45,19 @@
         </select>
     </div>
 
-    <div class="form-group">
-        {!! Form::submit('Salvar', [ 'class' => 'btn btn-primary col-12' ]) !!}
-    </div>
 
+    @if(!isset($address))
+        <div class="form-group">
+            {!! Form::submit('Salvar', [ 'class' => 'btn btn-primary col-12' ]) !!}
+        </div>
+    @else
+        <div class="form-group row">
+            {!! Form::submit('Salvar', [ 'class' => 'btn btn-primary col-6' ]) !!}
+        
+
+            {!! Form::open([ 'method' => 'delete', 'url' => url('address/'.$address->id) ])!!}
+            {!! Form::submit('Deletar',[ 'class' => 'btn btn-danger col-6']) !!}
+            {!! Form::close() !!}
+        @endif
 </div>    
 @endsection
