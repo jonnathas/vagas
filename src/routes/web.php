@@ -18,11 +18,16 @@ Route::group(['middleware'=>'web'],function(){
         Route::get('/personal-data/{id}/edit','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalDataController@edit')->name('personal_data.edit');
         Route::post('/personal-data/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\PersonalDataController@update')->name('personal_data.update');
 
+        //telefone
         Route::get('/phone/{id}/edit','Jonnathas\Vagas\Http\Controllers\Candidate\PhoneController@edit');
         Route::get('/phone/create','Jonnathas\Vagas\Http\Controllers\Candidate\PhoneController@create');
         Route::post('/phone','Jonnathas\Vagas\Http\Controllers\Candidate\PhoneController@store');
         Route::put('/phone/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\PhoneController@update');
         Route::delete('/phone/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\PhoneController@delete');
+
+        //endereços
+        Route::get('/address/create','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@create');
+        Route::post('/address','Jonnathas\Vagas\Http\Controllers\Candidate\AddressController@store');
 
 
         //Recrutador

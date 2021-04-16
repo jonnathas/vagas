@@ -28,23 +28,20 @@
                 <a href="{{url('phone/create')}}">
                     <i class="fas fa-plus"></i>
                 </a>
-
-            </div>
-
-            <div >
-                
             </div>
         </div>
         <div class="mt-5">
-            <h4>Endereço:</h4>
-            <div >
-                <form action="#">
-                    <input type="submit" value="Editar"  class="form-control ptn btn-warning col-md-4 mb-5" >
-                </form>
-            </div>
+            <h4>Endereço: 
+                <a href="{{url('address/create')}}">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </h4>
+            
             @foreach ($adresses as $address)
-                <div class="ml-4">
-                    <p><strong>Logradouro: </strong>{{$address->place}}</p>
+                <div class="ml-4 mt-5">
+                    <p><strong>Logradouro: </strong>{{$address->place}}
+                        <a href="{!! url('address/'.$address->id.'/edit') !!}"><i class="far fa-edit"></i></a>
+                    </p> 
                     <p><strong>Complemento: </strong>{{$address->complement}}</p>
                     <p><strong>Número: </strong>{{$address->number}}</p>
                 </div>

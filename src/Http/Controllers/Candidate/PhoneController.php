@@ -25,6 +25,10 @@ class PhoneController extends BaseController
     }
     public function store(Request $request){
 
+        $request->validate([
+            'number' => 'required | min:8 | max:20'
+        ]);
+
         $data = $request->except('_token');
         $data['user_id'] = auth()->user()->id;
 
