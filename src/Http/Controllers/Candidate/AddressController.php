@@ -61,7 +61,7 @@ class AddressController extends BaseController
         return redirect()->back()->with('error','Falha ao salvar!');
 
     }
-    public function delete($id){
+    public function destroy($id){
         
         $address = Address::find($id);
         

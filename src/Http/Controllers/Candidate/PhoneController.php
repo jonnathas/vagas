@@ -46,7 +46,7 @@ class PhoneController extends BaseController
 
 
     }
-    public function delete($id){
+    public function destroy($id){
 
         $phone = Phone::find($id);
         $phone->delete();

@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Candidancy extends Model
 {
-    protected $table = 'candidancies';
+    protected $table = 'produtos';
     
     protected $fillable = [
-        'user_id','vacancy_id'
+        ''
     ];
 
     protected $hidden = [

@@ -48,47 +48,44 @@
             @endforeach
         </div>
         <div class="mt-5">
-            <h4>Formação acadêmica:</h4>
-            <div >
-                <form action="#">
-                    <input type="submit" value="Adicionar fomação"  class="form-control ptn btn-primary col-md-4 mb-5" >
-                </form>
-            </div>
+            <h4>Formação acadêmica:
+                <a href="{{url('academic-experience/create')}}">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </h4>
 
             @foreach ($academic_experiences as $experience)
                 <div class="mt-5 ml-4">
-                    <h5><strong>Escola: </strong>{{$experience->school_name}}</h5>
+                    <h5>
+                        <strong>Escola: </strong>{{$experience->school_name}}
+                        <a href="{!! url('academic-experience/'.$experience->id.'/edit') !!}"><i class="far fa-edit"></i></a>
+                    </h5>
                     <p><strong>Nome do curso: </strong>{{$experience->course_name}}</p>
                     <p><strong>Nível: </strong>{{$experience->course_level}}</p>
                     <p><strong>Pais: </strong>{{$experience->country}}</p>
                     <p><strong>Estatus: </strong>{{$experience->status}}</p>
                     <p><strong>Início: </strong>{{$experience->start}}</p>
                     <p><strong>Término: </strong>{{$experience->end}}</p>
-                    <div >
-                        <form action="#">
-                            <input type="submit" value="Editar"  class="form-control ptn btn-primary col-md-4 mb-5" >
-                        </form>
-                    </div>
                 </div>
             @endforeach
         </div>
         <div class="mt-5">
-            <h4>Experiências profissionais:</h4>
-            <div >
-                <form action="#">
-                    <input type="submit" value="Adicionar experiencias"  class="form-control ptn btn-primary col-md-4 mb-5" >
-                </form>
-            </div>
+            <h4>Experiências profissionais: 
+                <a href="{{url('professional-experience/create')}}">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </h4>
+        
             @foreach ($professional_experiences as $experience)
                 <div class="mt-5 ml-4">
-                    <h5><strong>Empresa: </strong>{{$experience->company}}</h5>
+                    <h5><strong>Empresa: </strong>
+                        {{$experience->company}}
+                        <a href="{!! url('professional-experience/'.$experience->id.'/edit') !!}"><i class="far fa-edit"></i></a>
+                    </h5>
                     <p><strong>Cargo: </strong>{{$experience->role}}</p>
                     <p><strong>Descrição: </strong>{{$experience->description}}</p>
                     <p><strong>Início: </strong>{{$experience->start}}</p>
                     <p><strong>Desligamento: </strong>{{$experience->end}}</p>
-                    <form action="#">
-                        <input type="submit" value="Editar"  class="form-control ptn btn-warning col-md-4 mb-5" >
-                    </form>
                 </div>
             @endforeach
             
