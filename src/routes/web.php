@@ -40,10 +40,13 @@ Route::group(['middleware'=>'web'],function(){
         'namespace' => 'Jonnathas\Vagas\Http\Controllers\Recruiter'
     ],function(){
         
-        //Recrutador
+        //Vagas
         Route::get('/recruiter/vacancy/create','Vacancy@create');
         Route::get('/recruiter/vacancy/','Vacancy@index');
         Route::get('/recruiter/vacancy/{id}','Vacancy@show');
         Route::post('/recruiter/vacancy','Vacancy@store');
+
+        //candidatura
+        Route::get('/recruiter/vacancy/{vacancy}/candidate/{candidate}','Candidancy@showCandidate');
     });
 });

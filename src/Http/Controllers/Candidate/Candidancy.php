@@ -8,25 +8,22 @@ use Illuminate\Http\Request;
 use Jonnathas\Vagas\Models\Candidancy as Model;
 
 
-
 class Candidancy extends BaseController
 {
    
     public function store($id, Request $request){
 
-        $candidandy = Model::where([
+        $candidancy = Model::where([
             'user_id' => auth()->user()->id,
             'vacancy_id' => $id
         ])->get();
 
-        if($candidandy){
+        if(!$candidancy){
             Model::create([
                 'user_id' => auth()->user()->id,
                 'vacancy_id' => $id
             ]);
             return redirect('vacancy/'.$id);
-        }
-        
-        
+        } 
     }
 }

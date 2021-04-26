@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{$candidate->name}}</td>
                         <td>{{$candidate->email}}</td>
-                        <td><a href="#">visualizar</a></td>
+                        <td><a href="{{url("recruiter/vacancy/$vacancy->id/candidate/$candidate->id")}}">visualizar</a></td>
                     </tr>        
                 @endforeach
             </tbody>
