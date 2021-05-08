@@ -5,18 +5,20 @@ namespace Jonnathas\Vagas\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
+use Jonnathas\Vagas\Models\Vacancy; 
 
 class RedirectIfNoOwnerOfTheVacancy
 {
-<<<<<<< HEAD
+
     public function handle($request, Closure $next){
 
-        dd($request->route()->parameters());
-        
-=======
-    public function handler($request, Closure $next){
+        //dd($request->route()->parameters('teste'));
 
->>>>>>> 2eedbcdd7798c16e08368ad326b13df701d9faa4
+        $vacancy = Vacancy::find($request->route('vacancy'));
+
+        if((isset($vacancy->user_id))&&($vacancy->user_id != auth()->user()->id)){
+            return redirect()->back()->with('error','Acesso negado. É preciso ser o criador desta vaga!');
+        }
         return $next($request);
     }
 }

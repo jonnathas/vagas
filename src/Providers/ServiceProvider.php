@@ -5,7 +5,6 @@ namespace Jonnathas\Vagas\Providers;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 use Jonnathas\Vagas\Providers\Traits\RoutesServiceProviderTrait;
-use Jonnathas\Vagas\Providers\Traits\MiddlewaresServiceProviderTrait;
 use Jonnathas\Vagas\Providers\Traits\ConfigServiceProviderTrait;
 use Jonnathas\Vagas\Providers\Traits\TranslationsServiceProviderTrait;
 use Jonnathas\Vagas\Providers\Traits\AssetsServiceProviderTrait;
@@ -14,12 +13,10 @@ use Jonnathas\Vagas\Providers\Traits\ControllersServiceProviderTrait;
 use Jonnathas\Vagas\Providers\Traits\ViewsServiceProviderTrait;
 use Jonnathas\Vagas\Providers\Traits\HelpersServiceProviderTrait;
 
-
 class ServiceProvider extends LaravelServiceProvider
 {
     use 
         RoutesServiceProviderTrait,
-        MiddlewaresServiceProviderTrait,
         ConfigServiceProviderTrait,
         TranslationsServiceProviderTrait,
         AssetsServiceProviderTrait,
@@ -39,6 +36,7 @@ class ServiceProvider extends LaravelServiceProvider
     private $providers =
         [   
             'Jonnathas\Vagas\Providers\PaginatorServiceProvider',
+            'Jonnathas\Vagas\Providers\MiddlewaresServiceProvider'
             //'Jonnathas\Vagas\Providers\CommandsServiceProvider'
             //'Jonnathas\Vagas\Providers\RoutesServiceProvider'
         ];
@@ -52,8 +50,6 @@ class ServiceProvider extends LaravelServiceProvider
         $this->providersRegister();
 
         $this->loadRoutesWeb();
-        
-        $this->loadMiddlewaresAllias(); 
 
         $this->loadTranslations();
 
@@ -66,6 +62,7 @@ class ServiceProvider extends LaravelServiceProvider
         $this->publishControllers();
 
         $this->loadViews();
+
     }
 
     public function providersRegister(){

@@ -5,13 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware'=>'web'],function(){
 
-
     Route::get('/vacancy','Jonnathas\Vagas\Http\Controllers\Candidate\Vacancy@index');
     Route::get('/vacancy/{id}','Jonnathas\Vagas\Http\Controllers\Candidate\Vacancy@show');
     Route::post('/vacancy/{id}/candidancy','Jonnathas\Vagas\Http\Controllers\Candidate\Candidancy@store');
     
     Route::group([
-        'middleware'=>'auth',
+        'middleware'=>'auth,',
         'namespace'=>'Jonnathas\Vagas\Http\Controllers\Candidate'
     ],function(){
         
@@ -43,10 +42,10 @@ Route::group(['middleware'=>'web'],function(){
         //Vagas
         Route::get('/recruiter/vacancy/create','Vacancy@create');
         Route::get('/recruiter/vacancy/','Vacancy@index');
-        Route::get('/recruiter/vacancy/{id}','Vacancy@show');
+        Route::get('/recruiter/vacancy/{vacancy}','Vacancy@show')->middleware('ownerOfTheVacancy');
         Route::post('/recruiter/vacancy','Vacancy@store');
 
         //candidatura
-        Route::get('/recruiter/vacancy/{vacancy}/candidate/{candidate}','Candidancy@showCandidate');
+        Route::get('/recruiter/vacancy/{vacancy}/candidate/{candidate}','Candidancy@showCandidate')->middleware('ownerOfTheVacancy');
     });
 });
