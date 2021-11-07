@@ -27,5 +27,8 @@
                 "Jonnathas\\Vagas\\Providers\\ServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6"
     }
 }
