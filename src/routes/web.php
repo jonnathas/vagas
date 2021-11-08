@@ -10,7 +10,7 @@ Route::group(['middleware'=>'web'],function(){
     Route::post('/vacancy/{id}/candidancy','Jonnathas\Vagas\Http\Controllers\Candidate\Candidancy@store');
     
     Route::group([
-        'middleware'=>'auth,',
+        'middleware'=>'auth',
         'namespace'=>'Jonnathas\Vagas\Http\Controllers\Candidate'
     ],function(){
         
