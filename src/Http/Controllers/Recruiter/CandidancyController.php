@@ -22,7 +22,7 @@ class CandidancyController extends BaseController
             
             $user = User::find(auth()->user()->id);
             $phone = $user->phones()->get();
-            $address = $user->adresses()->get();
+            $address = $user->adresses()->where('on_curriculum',1)->get();
             $academic_e = $user->academic_experiences()->get();
             $professional_e = $user->professional_experiences()->get();
             
