@@ -72,4 +72,20 @@ class AddressController extends BaseController
         return redirect()->back()->with('error', 'Erro ao deletar!');
          
     }
+    public function active($id){
+        
+        $address = Address::where(['user_id' => auth()->user()->id])
+            ->update(['on_curriculum' => 0]);
+        
+        //************************* 
+
+        $address = Address::find($id);
+        
+        $address->on_curriculum = 1;
+        $address->save();
+
+        //************************* 
+
+        return redirect()->back();
+    }
 }
