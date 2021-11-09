@@ -19,12 +19,16 @@ Route::group(['middleware'=>'web'],function(){
         
         Route::get('/personal-data/{id}/edit','PersonalDataController@edit')->name('personal_data.edit');
         Route::post('/personal-data/{id}','PersonalDataController@update')->name('personal_data.update');
-
+        
         //telefone
         Route::resource('/phone','PhoneController')->except(['index','show']);
         
         //endereços
         Route::resource('/address','AddressController')->except(['index','show']);
+        
+        Route::get('/address/{address}/active','AddressController@active')
+            ->name('address.active')
+            ->middleware('ownerOfTheAddress');
 
         //formações acadêmicas
         Route::resource('/academic-experience','AcademicExperienceController')->except(['index','show']);

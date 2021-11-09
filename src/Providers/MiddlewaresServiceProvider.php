@@ -5,12 +5,14 @@ namespace Jonnathas\Vagas\Providers;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 use Jonnathas\Vagas\Http\Middleware\RedirectIfNoOwnerOfTheVacancy;
+use Jonnathas\Vagas\Http\Middleware\RedirectIfNoOwnerOfTheAddress;
 
 class MiddlewaresServiceProvider extends LaravelServiceProvider
 {
     
     private $middlewareAllias = [
-        'ownerOfTheVacancy' => RedirectIfNoOwnerOfTheVacancy::class
+        'ownerOfTheVacancy' => RedirectIfNoOwnerOfTheVacancy::class,
+        'ownerOfTheAddress' => RedirectIfNoOwnerOfTheAddress::class
     ];
 
     public function boot(){
