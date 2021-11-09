@@ -10,7 +10,7 @@ use Jonnathas\Vagas\Models\Vacancy as Model;
 use Jonnathas\Vagas\Models\Address;
 use Jonnathas\Vagas\Models\State;
 
-class Vacancy extends BaseController
+class VacancyController extends BaseController
 {
     public function index(Request $request){
 

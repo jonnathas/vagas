@@ -10,7 +10,7 @@ use Jonnathas\Vagas\Models\State;
 use Jonnathas\Vagas\Models\Candidancy;
 
 
-class Vacancy extends BaseController
+class VacancyController extends BaseController
 {
    
     public function index(Request $request){

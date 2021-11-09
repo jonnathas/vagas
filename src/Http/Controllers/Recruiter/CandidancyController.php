@@ -9,7 +9,7 @@ use Jonnathas\Vagas\Models\Candidancy as Model;
 use App\Models\User;
 
 
-class Candidancy extends BaseController
+class CandidancyController extends BaseController
 {
    public function showCandidate($vacancy, $candidate){
     
