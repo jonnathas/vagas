@@ -40,7 +40,7 @@
             @foreach ($adresses as $address)
                 <div class="ml-4 mt-5 jumbotron">
                     @if(!$address->on_curriculum)
-                        <label><a href="{!! route('address.active',['id' => $address->id]) !!}">Ativar</a></label>
+                        <label><a href="{!! route('address.active',['address' => $address->id]) !!}">Ativar</a></label>
                     @else
                         <label>Ativo</label>
                     @endif
