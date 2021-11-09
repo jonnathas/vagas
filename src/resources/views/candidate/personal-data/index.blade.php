@@ -31,17 +31,22 @@
             </div>
         </div>
         <div class="mt-5">
-            <h4>Endereço: 
+            <h4>Endereço:
                 <a href="{{url('address/create')}}">
                     <i class="fas fa-plus"></i>
                 </a>
             </h4>
             
             @foreach ($adresses as $address)
-                <div class="ml-4 mt-5">
+                <div class="ml-4 mt-5 jumbotron">
+                    @if(!$address->on_curriculum)
+                        <label><a href="{!! route('address.active',['id' => $address->id]) !!}">Ativar</a></label>
+                    @else
+                        <label>Ativo</label>
+                    @endif
                     <p><strong>Logradouro: </strong>{{$address->place}}
                         <a href="{!! url('address/'.$address->id.'/edit') !!}"><i class="far fa-edit"></i></a>
-                    </p> 
+                    </p>
                     <p><strong>Complemento: </strong>{{$address->complement}}</p>
                     <p><strong>Número: </strong>{{$address->number}}</p>
                 </div>
