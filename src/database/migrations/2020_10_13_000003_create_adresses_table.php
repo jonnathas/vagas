@@ -20,7 +20,7 @@ class CreateAdressesTable extends Migration
             $table->string('place');
             $table->string('complement');
             $table->integer('number');
-            $table->boolean('on_curriculum')->default(0)->change();
+            $table->boolean('on_curriculum')->default(0);
             $table->timestamps();
             
             $table->foreign('state_id')->references('id')->on('states');
