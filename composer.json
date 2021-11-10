@@ -29,6 +29,12 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^6"
+        "orchestra/testbench": "^6",
+        "orchestra/database": "^6"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
     }
 }
