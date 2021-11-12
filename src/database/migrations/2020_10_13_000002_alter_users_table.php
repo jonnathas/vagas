@@ -36,6 +36,7 @@ class AlterUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('state_id');
             $table->dropColumn('birth_date');
+            $table->dropColumn('telephone');
         });
     }
 }
