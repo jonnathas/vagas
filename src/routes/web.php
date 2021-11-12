@@ -44,10 +44,10 @@ Route::group(['middleware'=>'web'],function(){
     ],function(){
         
         //Vagas
-        Route::get('/recruiter/vacancy/create','VacancyController@create');
+        Route::get('/recruiter/vacancy/create','VacancyController@create')->middleware('InformationRegistered');
         Route::get('/recruiter/vacancy/','VacancyController@index');
         Route::get('/recruiter/vacancy/{vacancy}','VacancyController@show')->middleware('ownerOfTheVacancy');
-        Route::post('/recruiter/vacancy','VacancyController@store');
+        Route::post('/recruiter/vacancy','VacancyController@store')->middleware('InformationRegistered');
 
         //candidatura
         Route::get('/recruiter/vacancy/{vacancy}/candidate/{candidate}','CandidancyController@showCandidate')->middleware('ownerOfTheVacancy');
