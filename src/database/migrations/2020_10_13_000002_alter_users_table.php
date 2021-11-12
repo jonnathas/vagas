@@ -15,8 +15,9 @@ class AlterUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->date('birth_date')->nullable();
+            $table->string('telephone')->nullable();
             $table->unsignedBigInteger('state_id')->nullable();
-        
+            
             $table->foreign('state_id')->references('id')->on('states');
         });
     }
