@@ -21,6 +21,11 @@
             "src"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+          "Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -29,8 +34,7 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "^6",
-        "orchestra/database": "^6"
+        "orchestra/testbench": "^6"
     },
     "scripts": {
         "post-autoload-dump": [
