@@ -37,10 +37,10 @@ class VacancyController extends BaseController
 
         $request->validate([
             'role' => ['min:3',"max:255",'required'],
-            'description' => ['min:20',"max:2000",'required'],
-            'wage' => ['required', 'numeric'],
+            'description' => ['min:3',"max:2000",'required'],
             'journey' => ["max:255",'required'],
             'contract' => ["max:255",'required'],
+            'wage' => ['required', 'numeric'],
             
             'state_id' => ["max:255",'required'],
             'place' => ["max:255",'required'],
