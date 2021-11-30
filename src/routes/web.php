@@ -44,12 +44,19 @@ Route::group(['middleware'=>'web'],function(){
     ],function(){
         
         //Vagas
-        Route::get('/recruiter/vacancy/create','VacancyController@create')->middleware('InformationRegistered');
+        Route::get('/recruiter/vacancy/create','VacancyController@create')->middleware(['HavePhoneRegistered','HaveCompanyRegistered']);
         Route::get('/recruiter/vacancy/','VacancyController@index');
         Route::get('/recruiter/vacancy/{vacancy}','VacancyController@show')->middleware('ownerOfTheVacancy');
-        Route::post('/recruiter/vacancy','VacancyController@store')->middleware('InformationRegistered');
+        Route::post('/recruiter/vacancy','VacancyController@store')->middleware(['HavePhoneRegistered','HaveCompanyRegistered']);
 
         //candidatura
         Route::get('/recruiter/vacancy/{vacancy}/candidate/{candidate}','CandidancyController@showCandidate')->middleware('ownerOfTheVacancy');
+
+        //Compania
+        Route::get('/recruiter/company','CompanyController@create');
+        Route::post('/recruiter/company','CompanyController@store');
+        Route::get('/recruiter/company/{company}/edit','CompanyController@edit');
+        Route::put('/recruiter/company/{company}','CompanyController@update');
+        
     });
 });
