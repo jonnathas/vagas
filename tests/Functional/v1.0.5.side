@@ -1,0 +1,533 @@
+{
+  "id": "5f1a30d0-c37f-46c7-9941-314729a05bb7",
+  "version": "2.0",
+  "name": "Vagas v1.0.5",
+  "url": "http://localhost/projetos/2021/vagas2/public/vacancy",
+  "tests": [{
+    "id": "7dfb1b84-76bd-4fd2-948e-9c1f7bfe59d1",
+    "name": "Publicar vaga - válida",
+    "commands": [{
+      "id": "ebc8cf8a-e844-47ee-8733-b7183ae27f9e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/projetos/2021/vagas2/public/vacancy",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d155e44f-3681-4f9b-b84a-7259e1222495",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "864x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0cbc3357-ba0e-4e61-b0ee-d5bd54447579",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Publicar vaga",
+      "targets": [
+        ["linkText=Publicar vaga", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Publicar vaga')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/projetos/2021/vagas2/public/recruiter/vacancy/create']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Publicar vaga')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d0f3635-05b3-40bc-91cb-2638536d7dd1",
+      "comment": "",
+      "command": "click",
+      "target": "id=cargo",
+      "targets": [
+        ["id=cargo", "id"],
+        ["name=role", "name"],
+        ["css=#cargo", "css:finder"],
+        ["xpath=//input[@id='cargo']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b511f329-5440-454a-b50e-987270d98ac3",
+      "comment": "",
+      "command": "type",
+      "target": "id=cargo",
+      "targets": [
+        ["id=cargo", "id"],
+        ["name=role", "name"],
+        ["css=#cargo", "css:finder"],
+        ["xpath=//input[@id='cargo']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Programador"
+    }, {
+      "id": "4d9f7c6e-3a21-448b-8099-1b4db10dad43",
+      "comment": "",
+      "command": "click",
+      "target": "id=descricao",
+      "targets": [
+        ["id=descricao", "id"],
+        ["name=description", "name"],
+        ["css=#descricao", "css:finder"],
+        ["xpath=//textarea[@id='descricao']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f7d940b-a086-4c73-9210-411db0890995",
+      "comment": "",
+      "command": "click",
+      "target": "id=descricao",
+      "targets": [
+        ["id=descricao", "id"],
+        ["name=description", "name"],
+        ["css=#descricao", "css:finder"],
+        ["xpath=//textarea[@id='descricao']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "94131136-8d00-409d-ac75-c8b4106149a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=descricao",
+      "targets": [
+        ["id=descricao", "id"],
+        ["name=description", "name"],
+        ["css=#descricao", "css:finder"],
+        ["xpath=//textarea[@id='descricao']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week."
+    }, {
+      "id": "743c15e5-9649-42ef-8b57-6ba3900e4293",
+      "comment": "",
+      "command": "click",
+      "target": "id=salario",
+      "targets": [
+        ["id=salario", "id"],
+        ["name=wage", "name"],
+        ["css=#salario", "css:finder"],
+        ["xpath=//input[@id='salario']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd2d0eaf-5cc7-42ed-b427-30440d0235c4",
+      "comment": "",
+      "command": "type",
+      "target": "id=salario",
+      "targets": [
+        ["id=salario", "id"],
+        ["name=wage", "name"],
+        ["css=#salario", "css:finder"],
+        ["xpath=//input[@id='salario']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "2109f623-093c-44f4-bd67-cae02ebb3b24",
+      "comment": "",
+      "command": "type",
+      "target": "id=jornada",
+      "targets": [
+        ["id=jornada", "id"],
+        ["name=journey", "name"],
+        ["css=#jornada", "css:finder"],
+        ["xpath=//input[@id='jornada']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "integral"
+    }, {
+      "id": "dcee13b3-46d3-421d-881c-e539c7415561",
+      "comment": "",
+      "command": "click",
+      "target": "id=contrato",
+      "targets": [
+        ["id=contrato", "id"],
+        ["name=contract", "name"],
+        ["css=#contrato", "css:finder"],
+        ["xpath=//input[@id='contrato']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee3d65aa-2aa3-4dd4-af11-09203aff1a11",
+      "comment": "",
+      "command": "type",
+      "target": "id=contrato",
+      "targets": [
+        ["id=contrato", "id"],
+        ["name=contract", "name"],
+        ["css=#contrato", "css:finder"],
+        ["xpath=//input[@id='contrato']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "clt"
+    }, {
+      "id": "515c91af-cdee-4aed-a911-37bf870570be",
+      "comment": "",
+      "command": "click",
+      "target": "id=estado",
+      "targets": [
+        ["id=estado", "id"],
+        ["name=state_id", "name"],
+        ["css=#estado", "css:finder"],
+        ["xpath=//select[@id='estado']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f096b67-575c-4b8a-8dee-9cd2a95c5324",
+      "comment": "",
+      "command": "select",
+      "target": "id=estado",
+      "targets": [],
+      "value": "label=MA"
+    }, {
+      "id": "7bd8fc3b-31ee-4f98-a5f0-b69ebd0fd13c",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco",
+      "targets": [
+        ["id=endereco", "id"],
+        ["name=place", "name"],
+        ["css=#endereco", "css:finder"],
+        ["xpath=//input[@id='endereco']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75f6ffcd-57c6-4ed5-bf0f-c2f1939ad292",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco",
+      "targets": [
+        ["id=endereco", "id"],
+        ["name=place", "name"],
+        ["css=#endereco", "css:finder"],
+        ["xpath=//input[@id='endereco']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": "Rua Ferreira Pontes, 708"
+    }, {
+      "id": "55d447d5-095e-4daf-9208-bb9aa223094d",
+      "comment": "",
+      "command": "type",
+      "target": "id=complemento",
+      "targets": [
+        ["id=complemento", "id"],
+        ["name=complement", "name"],
+        ["css=#complemento", "css:finder"],
+        ["xpath=//input[@id='complemento']", "xpath:attributes"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": "casa 5"
+    }, {
+      "id": "9fe36792-8a6b-4878-8441-489b3795f9b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=numero",
+      "targets": [
+        ["id=numero", "id"],
+        ["name=number", "name"],
+        ["css=#numero", "css:finder"],
+        ["xpath=//input[@id='numero']", "xpath:attributes"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec131ef2-e598-4992-ac49-4f7e320cd074",
+      "comment": "",
+      "command": "type",
+      "target": "id=numero",
+      "targets": [
+        ["id=numero", "id"],
+        ["name=number", "name"],
+        ["css=#numero", "css:finder"],
+        ["xpath=//input[@id='numero']", "xpath:attributes"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": "707"
+    }, {
+      "id": "2ded022e-6c62-40eb-8612-8c6b29015781",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Publicar']", "xpath:attributes"],
+        ["xpath=//div[10]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f812bced-d0f1-438c-8a66-af5b61f4e7a0",
+      "comment": "",
+      "command": "assert",
+      "target": "css = .alert-success",
+      "targets": [],
+      "value": "Vaga publicada com sucesso!"
+    }]
+  }, {
+    "id": "8463efe4-dac9-4c62-b7d8-17c392002638",
+    "name": "Publicar vaga - inválida",
+    "commands": [{
+      "id": "14cc5ad6-36c5-4a93-92fc-37c4b975895a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/projetos/2021/vagas2/public/vacancy",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc1dc2bb-c13d-4470-8299-454723eb1dfe",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "864x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46b2ea42-9b89-4c97-a9f6-d90897811bc9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Publicar vaga",
+      "targets": [
+        ["linkText=Publicar vaga", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Publicar vaga')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/projetos/2021/vagas2/public/recruiter/vacancy/create']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Publicar vaga')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a7e9375-06b7-4988-b9cc-b8dfe019e0a0",
+      "comment": "",
+      "command": "click",
+      "target": "id=cargo",
+      "targets": [
+        ["id=cargo", "id"],
+        ["name=role", "name"],
+        ["css=#cargo", "css:finder"],
+        ["xpath=//input[@id='cargo']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93daddc5-092b-44da-8a07-9907d74a763f",
+      "comment": "",
+      "command": "type",
+      "target": "id=cargo",
+      "targets": [
+        ["id=cargo", "id"],
+        ["name=role", "name"],
+        ["css=#cargo", "css:finder"],
+        ["xpath=//input[@id='cargo']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "TI"
+    }, {
+      "id": "5ecbebb2-f0e1-44e9-b5ec-181f9336443f",
+      "comment": "",
+      "command": "click",
+      "target": "id=descricao",
+      "targets": [
+        ["id=descricao", "id"],
+        ["name=description", "name"],
+        ["css=#descricao", "css:finder"],
+        ["xpath=//textarea[@id='descricao']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "806cd48b-870c-4035-a173-6b5f113e6181",
+      "comment": "",
+      "command": "click",
+      "target": "id=descricao",
+      "targets": [
+        ["id=descricao", "id"],
+        ["name=description", "name"],
+        ["css=#descricao", "css:finder"],
+        ["xpath=//textarea[@id='descricao']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50dd60cf-3ce5-4b0a-ad11-bc8a955188f9",
+      "comment": "",
+      "command": "type",
+      "target": "id=descricao",
+      "targets": [
+        ["id=descricao", "id"],
+        ["name=description", "name"],
+        ["css=#descricao", "css:finder"],
+        ["xpath=//textarea[@id='descricao']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week.Inserting a lightbulb into my vaginal bacon buffet got me flowing sex wee faster than snot off a whip. He munched on my piss flaps, even though I’d been riding the cotton pony for the best part of a week."
+    }, {
+      "id": "04a50522-dee7-4046-88a7-d18361e1ac87",
+      "comment": "",
+      "command": "click",
+      "target": "id=salario",
+      "targets": [
+        ["id=salario", "id"],
+        ["name=wage", "name"],
+        ["css=#salario", "css:finder"],
+        ["xpath=//input[@id='salario']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3597b060-5d9e-442e-a59d-47f9b556ae42",
+      "comment": "",
+      "command": "type",
+      "target": "id=salario",
+      "targets": [
+        ["id=salario", "id"],
+        ["name=wage", "name"],
+        ["css=#salario", "css:finder"],
+        ["xpath=//input[@id='salario']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "-2000"
+    }, {
+      "id": "cb9e143d-7a34-4a28-ac33-617be825dabc",
+      "comment": "",
+      "command": "type",
+      "target": "id=jornada",
+      "targets": [
+        ["id=jornada", "id"],
+        ["name=journey", "name"],
+        ["css=#jornada", "css:finder"],
+        ["xpath=//input[@id='jornada']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "2h"
+    }, {
+      "id": "1db4bae4-92ff-4325-9f3d-040719e5aff2",
+      "comment": "",
+      "command": "click",
+      "target": "id=contrato",
+      "targets": [
+        ["id=contrato", "id"],
+        ["name=contract", "name"],
+        ["css=#contrato", "css:finder"],
+        ["xpath=//input[@id='contrato']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e1e543d-a89f-4880-bbf0-553400d435dd",
+      "comment": "",
+      "command": "type",
+      "target": "id=contrato",
+      "targets": [
+        ["id=contrato", "id"],
+        ["name=contract", "name"],
+        ["css=#contrato", "css:finder"],
+        ["xpath=//input[@id='contrato']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "-1"
+    }, {
+      "id": "f3e5d396-d7fa-4799-a116-46f5be354c97",
+      "comment": "",
+      "command": "click",
+      "target": "id=estado",
+      "targets": [
+        ["id=estado", "id"],
+        ["name=state_id", "name"],
+        ["css=#estado", "css:finder"],
+        ["xpath=//select[@id='estado']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "54c6f36c-7946-4f2f-9cfe-cde5b724ea22",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco",
+      "targets": [
+        ["id=endereco", "id"],
+        ["name=place", "name"],
+        ["css=#endereco", "css:finder"],
+        ["xpath=//input[@id='endereco']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0a5ede1-a55e-4072-8550-3cb217229a30",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco",
+      "targets": [
+        ["id=endereco", "id"],
+        ["name=place", "name"],
+        ["css=#endereco", "css:finder"],
+        ["xpath=//input[@id='endereco']", "xpath:attributes"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b2112a7-dc04-4c05-b906-80aa8b72d10d",
+      "comment": "",
+      "command": "type",
+      "target": "id=complemento",
+      "targets": [
+        ["id=complemento", "id"],
+        ["name=complement", "name"],
+        ["css=#complemento", "css:finder"],
+        ["xpath=//input[@id='complemento']", "xpath:attributes"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1547c611-1317-4dc2-a129-c8b78de90885",
+      "comment": "",
+      "command": "click",
+      "target": "id=numero",
+      "targets": [
+        ["id=numero", "id"],
+        ["name=number", "name"],
+        ["css=#numero", "css:finder"],
+        ["xpath=//input[@id='numero']", "xpath:attributes"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "628f9a32-ed14-47c8-81e5-06c727ea1421",
+      "comment": "",
+      "command": "type",
+      "target": "id=numero",
+      "targets": [
+        ["id=numero", "id"],
+        ["name=number", "name"],
+        ["css=#numero", "css:finder"],
+        ["xpath=//input[@id='numero']", "xpath:attributes"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bea5a78-9510-46bf-9925-d1767d2d207e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Publicar']", "xpath:attributes"],
+        ["xpath=//div[10]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8c849927-396b-4568-acd2-144b4aed3853",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7dfb1b84-76bd-4fd2-948e-9c1f7bfe59d1"]
+  }],
+  "urls": ["http://localhost/projetos/2021/vagas2/public/vacancy"],
+  "plugins": []
+}
